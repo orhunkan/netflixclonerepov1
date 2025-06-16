@@ -54,10 +54,38 @@ export default function RegisterForm() {
           <form onSubmit={handleSubmit} className="bg-black/40 backdrop-blur-sm p-16 rounded-md space-y-8">
             <h2 className="text-3xl font-bold text-white">Sign Up</h2>
 
-            <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <Input type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+            <Input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={`transition bg-black/50 text-white placeholder:text-gray-400 border-white/20 ${
+                email ? "bg-white text-black" : ""
+              }`}
+              required
+            />
 
+            <Input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={`transition bg-black/50 text-white placeholder:text-gray-400 border-white/20 ${
+                password ? "bg-white text-black" : ""
+              }`}
+              required
+            />
+
+            <Input
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className={`transition bg-black/50 text-white placeholder:text-gray-400 border-white/20 ${
+                confirmPassword ? "bg-white text-black" : ""
+              }`}
+              required
+            />
             <Button type="submit" className="w-full h-12 bg-[#e50914] hover:bg-[#f40612]">
               Sign Up
             </Button>

@@ -29,7 +29,11 @@ export async function POST(req: Request) {
     );
   }
 
-  const token = signJwt({ sub: user.id, email: user.email });
+  const token = signJwt({
+    sub: user.id,
+    email: user.email,
+    name: user.name ?? user.email,
+  });
   const res = NextResponse.json({ message: "Login success" });
   res.cookies.set("token", token, {
     httpOnly: true,

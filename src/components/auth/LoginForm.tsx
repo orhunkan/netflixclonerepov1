@@ -67,20 +67,27 @@ export default function LoginForm() {
           >
             <h2 className="text-3xl font-bold text-white">Sign In</h2>
 
-            <Input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <Input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+        <Input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={`transition bg-black/50 text-white placeholder:text-gray-400 border-white/20 ${
+            email ? "bg-white text-black" : ""
+          }`}
+          required
+        />
+
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className={`transition bg-black/50 text-white placeholder:text-gray-400 border-white/20 ${
+            password ? "bg-white text-black" : ""
+          }`}
+          required
+        />
 
             <Button type="submit" className="w-full h-12 bg-[#e50914] hover:bg-[#f40612]">
               Sign In

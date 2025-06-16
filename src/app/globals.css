@@ -2,6 +2,14 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* Override scrollbar track */
+.scrollbar-hide::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* (if exists) Edge/Chrome overlay */
+.scrollbar-hide {
+  scrollbar-color: transparent transparent;
+}
 
 @theme inline {
   --color-background: var(--background);
